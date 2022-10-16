@@ -1,12 +1,13 @@
-package common
+package respone
 
 import (
+	"blog-console/common"
 	"blog-console/global"
 	"github.com/gin-gonic/gin"
 )
 
 func GetPage(c *gin.Context) int {
-	page := StrTo(c.Query("page")).MustInt()
+	page := common.StrTo(c.Query("page")).MustInt()
 	if page <= 0 {
 		return 1
 	}
@@ -15,7 +16,7 @@ func GetPage(c *gin.Context) int {
 }
 
 func GetPageSize(c *gin.Context) int {
-	pageSize := StrTo(c.Query("page_size")).MustInt()
+	pageSize := common.StrTo(c.Query("page_size")).MustInt()
 	if pageSize <= 0 {
 		return global.AppSetting.DefaultPageSize
 	}

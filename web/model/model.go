@@ -4,6 +4,7 @@ import (
 	"blog-console/common"
 	"blog-console/global"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
