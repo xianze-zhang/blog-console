@@ -2,7 +2,7 @@ package controller
 
 import (
 	"blog-console/common"
-	"blog-console/respone"
+	"blog-console/response"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,7 +13,7 @@ func NewArticle() Article {
 }
 
 func (a Article) GetArticle(c *gin.Context) {
-	respone.NewResponse(c).ToErrorResponse(common.ServerError)
+	response.NewResponse(c).ToErrorResponse(common.ServerError)
 	return
 }
 

@@ -1,0 +1,4 @@
+2022/10/17 23:17:49 {"callers":["D:/DevEev/GoProjects/blog-console/main.go: 26 main.init.0"],"level":"fatal","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1666019869775957400}
+2022/10/17 23:18:52 {"callers":["D:/DevEev/GoProjects/blog-console/main.go: 26 main.init.0"],"level":"fatal","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1666019932600506600}
+2022/10/17 23:19:16 {"callers":["D:/DevEev/GoProjects/blog-console/main.go: 26 main.init.0"],"level":"fatal","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1666019956502715700}
+2022/10/17 23:20:32 {"callers":["D:/DevEev/GoProjects/blog-console/main.go: 26 main.init.0"],"level":"fatal","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1666020032297661900}

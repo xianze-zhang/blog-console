@@ -1,6 +1,11 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"blog-console/common"
+	"blog-console/global"
+	"blog-console/response"
+	"github.com/gin-gonic/gin"
+)
 
 type Tag struct{}
 
@@ -37,7 +42,19 @@ func (t Tag) UpdateTagState(c *gin.Context) {
 // @Failure 500 {object} common.Error "内部错误"
 // @Router /tags [get]
 func (t Tag) GetTagList(c *gin.Context) {
-
+	param := struct {
+		Name  string `json:"name" binding:"max=100"`
+		State uint8  `json:"state,default=1" binding:"oneof=0 1"`
+	}{}
+	response := response.NewResponse(c)
+	valid, errs := common.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("common.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(common.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	response.ToResponse(gin.H{})
+	return
 }
 
 // CreateTag
