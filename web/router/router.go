@@ -1,14 +1,18 @@
 package router
 
 import (
+	_ "blog-console/docs"
 	"blog-console/web/controller"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func NewRouter() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	article := controller.NewArticle()
 	tag := controller.NewTag()
